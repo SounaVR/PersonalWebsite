@@ -1,4 +1,4 @@
-#Souna's Personal Website
+# Souna's Personal Website
 
 ### Ambitious TODO list
 - [ ] Portfolio
