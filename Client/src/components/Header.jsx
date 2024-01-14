@@ -6,12 +6,17 @@ import '../css/Navbar.css';
 const Header = () => {
     return (
         <nav className='navbar'>
-            <div className='logo'>
-                <Link to="/">Logo</Link>
-            </div>
             <div className="nav-links">
                 <Link to="/projects">Projects</Link>
                 <Link to="/contact">Contact</Link>
+            </div>
+            <div className='form'>
+                <Link to="/login">
+                    <button>Login</button>
+                </Link>
+                <Link to="/register">
+                    <button className='register-button'>Register</button>
+                </Link>
             </div>
         </nav>
     );

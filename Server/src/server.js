@@ -1,54 +1,66 @@
 // Imports
 require('dotenv').config();
+const { expressjwt: jwt } = require('express-jwt');
+const https = require('https');
 const express = require('express');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const path = require('path');
-const nodemailer = require('nodemailer');
+const fs = require('fs');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const routes = require('./routes');
+
+const options = {
+    key: fs.readFileSync('./cert-keys/localhost-key.pem'),
+    cert: fs.readFileSync('./cert-keys/localhost.pem')
+};
 
 // App
 const app = express();
+const server = https.createServer(options, app);
 const port = process.env.PORT || 5000;
+
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.JWT_SECRET,
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+    }
+}));
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ credentials: true, origin: 'http://localhost:5000' }));
+app.use('/api', routes);
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_STRING);
 
 // Serve static files from the Vite build
 app.use(express.static(path.join(__dirname, '../../Client/dist')));
-
-// Nodemailer setup
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
-    }
-});
-
-// Endpoint to send an email
-app.post('/api/send-email', (req, res) => {
-    const { to, subject, text } = req.body;
-
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to,
-        subject,
-        text
-    }
-
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) return res.status(500).send(err.toString());
-        res.status(200).send('Email sent: ' + info.response);
-    });
-});
 
 // Serve the landing page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../Client/dist', 'index.html'));
 });
 
+// Protected route using JWT and additional check for admin access
+app.get('/admin/dashboard', jwt({ secret: process.env.JWT_SECRET, algorithms: ['HS256'] }), (req, res) => {
+    console.log('Request Headers:', req.headers);
+    
+    if (!req.user || !req.user.isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+  
+    res.send('Welcome to the admin dashboard!');
+});
 
 // Start the server
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Server is running on port ${port}.`);
 });

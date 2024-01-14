@@ -7,19 +7,34 @@
     color: #fff;
 }
 
-.logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
 .nav-links a {
     color: #fff;
     text-decoration: none;
-    margin-left: 1rem;
+    margin-right: 10px;
 }
 
 .nav-links a:hover {
     border-bottom: 2px solid #fff;
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: 2px solid purple;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form a {
+    margin-left: 10px;
+}
+
+form a {
+    text-decoration: none;
 }
