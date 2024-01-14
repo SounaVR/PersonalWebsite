@@ -25,7 +25,7 @@ const Contact = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    to: 'recipient@example.com',
+                    to: 'souna@duck.com',
                     subject: 'New Contact Form Submission',
                     text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
                 })
@@ -42,7 +42,7 @@ const Contact = () => {
         <div>
             <h2>Contact Form</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>Name:</label>
+                <label htmlFor='name'>Full Name</label>
                 <input
                     type='text'
                     id='name'
@@ -52,7 +52,7 @@ const Contact = () => {
                     required
                 />
 
-                <label htmlFor='email'>Email:</label>
+                <label htmlFor='email'>Your Mail</label>
                 <input
                     type='email'
                     id='email'
@@ -62,7 +62,7 @@ const Contact = () => {
                     required
                 />
 
-                <label htmlFor='message'>Message:</label>
+                <label htmlFor='message'>Message</label>
                 <textarea
                     id='message'
                     name='message'
