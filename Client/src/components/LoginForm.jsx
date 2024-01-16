@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
     const { login } = useAuth();
@@ -31,7 +32,10 @@ const LoginForm = () => {
                 const { token } = await response.json();
 
                 login(token);
-                window.location.href = '/';
+                toast.success('Login successful!');
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
             } else {
                 setError('Invalid credentials !');
             }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { toast } from 'react-toastify';
 
 const RegisterForm = () => {
     const { login } = useAuth();
@@ -31,6 +32,7 @@ const RegisterForm = () => {
                 
                 login(token);
                 window.location.href = '/';
+                toast.success('Reagistration successful!');
             } else {
                 console.error('Register failed');
             }
