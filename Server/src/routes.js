@@ -39,10 +39,15 @@ router.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(password, salt);
+
         const user = new User({ username, password: hashedPassword });
-        await user.save();
-        res.status(201).send('User registered successfully!');
+
+        const newUser = await user.save();
+        const token = jwt.sign({ userName: user.username, id: user._id, role: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: "2h" });
+
+        res.status(201).json({ result: newUser, token: token });
     } catch (err) {
         console.error('Error registering user:', err);
         res.status(500).send('Error registering user');
@@ -66,11 +71,9 @@ router.post('/login', async (req, res) => {
             return res.status(401).send('Invalid credentials');
         }
 
-        const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ userName: user.username, id: user._id, role: user.isAdmin }, process.env.JWT_SECRET, { expiresIn: "2h" });
 
-        res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'None' });
-
-        res.json({ token, isAdmin: user.isAdmin });
+        res.json({ result: user, token: token });
     } catch (err) {
         console.error('Error logging in:', err);
         res.status(500).send('Error logging in');
