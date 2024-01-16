@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const RegisterForm = () => {
+    const { login } = useAuth();
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -26,7 +28,8 @@ const RegisterForm = () => {
 
             if (response.ok) {
                 const { token } = await response.json();
-                console.log('Register successful! Token:', token);
+                
+                login(token);
                 window.location.href = '/';
             } else {
                 console.error('Register failed');

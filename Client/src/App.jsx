@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import AdminDashboard from './components/AdminDashboard';
+
 import './App.css';
 
 const App = () => {

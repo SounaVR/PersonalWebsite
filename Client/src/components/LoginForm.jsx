@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const LoginForm = () => {
+    const { login } = useAuth();
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -22,14 +24,13 @@ const LoginForm = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                credentials: 'include',
                 body: JSON.stringify({ username: formData.username, password: formData.password })
             });
 
             if (response.ok) {
                 const { token } = await response.json();
 
-                document.cookie = `token=${token}; path=/; secure; HttpOnly`;
+                login(token);
                 window.location.href = '/';
             } else {
                 setError('Invalid credentials !');
