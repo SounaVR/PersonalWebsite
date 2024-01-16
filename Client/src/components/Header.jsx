@@ -6,7 +6,6 @@ import '../css/Navbar.css';
 
 const Header = () => {
     const { authData, logout } = useAuth();
-    const isAdmin = authData.role;
 
     return (
         <nav className='navbar'>
@@ -17,7 +16,7 @@ const Header = () => {
             <div className='form'>
                 {authData.token ? (
                     <>
-                        {isAdmin ? (
+                        {authData.role ? (
                             <Link to="/admin/dashboard">
                                 <button>Admin</button>
                             </Link>

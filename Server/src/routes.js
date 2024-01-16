@@ -80,4 +80,19 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.get('/verify-token', (req, res) => {
+    const token = req.headers.authorization.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    try {
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+        res.json({ role: decodedToken.role });
+    } catch (err) {
+        res.status(401).json({ error: 'Invalid token' });
+    }
+});
+
 module.exports = router;
