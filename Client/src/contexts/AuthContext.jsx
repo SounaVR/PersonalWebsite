@@ -11,11 +11,15 @@ export const AuthProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        localStorage.setItem('token', authData.token);
+        if (authData.token) {
+            localStorage.setItem('token', authData.token);
+        } else {
+            localStorage.removeItem('token');
+        }
     }, [authData]);
 
     const login = (token) => {
-        const decodedToken = jwtDecode(token);
+        const decodedToken = token ? jwtDecode(token) : null;
         setAuthData({ token, role: decodedToken ? decodedToken.role : null });
     };
 
