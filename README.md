@@ -2,7 +2,7 @@
 
 ### Ambitious TODO list
 - [ ] Portfolio
-- [ ] Authentication
+- [x] Authentication
 - [ ] Admin Panel
 - [ ] And more later...
 
