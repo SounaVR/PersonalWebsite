@@ -23,7 +23,7 @@ const RegisterForm = () => {
 
     const handleRegister = async () => {
         try {
-            const response = await fetch('https://localhost:5000/api/register', {
+            const response = await fetch('https://souna.lexod.fr/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
 import '../css/Contact.css';
 
 const Contact = () => {
@@ -23,7 +25,7 @@ const Contact = () => {
         e.preventDefault();
         
         try {
-            const response = await fetch('https://localhost:5000/api/send-email', {
+            const response = await fetch('https://souna.lexod.fr/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -35,7 +37,12 @@ const Contact = () => {
                 })
             });
 
-            if (response.ok) console.log('Email sent successfully!');
+            if (response.ok) {
+                toast.success('Email sent successfuly!');
+                setTimeout(() => {
+                    window.location.href = '/';
+                }, 2000);
+            }
             else console.error('Failed to send email.');
         } catch (err) {
             console.error('Error sending email:', err);

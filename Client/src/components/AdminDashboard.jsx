@@ -10,7 +10,7 @@ const AdminDashboard = () => {
         
         const verifyToken = async () => {
             try {
-                const response = await fetch('https://localhost:5000/api/verify-token', {
+                const response = await fetch('https://souna.lexod.fr/api/verify-token', {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${authData.token}`

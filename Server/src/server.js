@@ -1,23 +1,14 @@
 // Imports
 require('dotenv').config();
-const https = require('https');
+const http = require('http');
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const path = require('path');
-const fs = require('fs');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const routes = require('./routes');
 
-const options = {
-    key: fs.readFileSync('./cert-keys/localhost-key.pem'),
-    cert: fs.readFileSync('./cert-keys/localhost.pem')
-};
-
 // App
 const app = express();
-const server = https.createServer(options, app);
-const port = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
@@ -36,6 +27,6 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-server.listen(port, () => {
-    console.log(`Server is running on port ${port}.`);
+http.createServer(app).listen(process.env.PORT, () => {
+    console.log(`Server is running.`);
 });

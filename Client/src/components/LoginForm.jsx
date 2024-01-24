@@ -24,7 +24,7 @@ const LoginForm = () => {
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('https://localhost:5000/api/login', {
+            const response = await fetch('https://souna.lexod.fr/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
