@@ -6,6 +6,8 @@ const AdminDashboard = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
+        document.title = "Administration Panel";
+        
         const verifyToken = async () => {
             try {
                 const response = await fetch('https://localhost:5000/api/verify-token', {

@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Contact.css';
 
 const Contact = () => {
+    useEffect(() => {
+        document.title = "Contact";
+    }, []);
+    
     const [formData, setFormData] = useState({
         name: '',
         email: '',

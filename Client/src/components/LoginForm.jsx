@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 
 const LoginForm = () => {
+    useEffect(() => {
+        document.title = "Login";
+    }, []);
+
     const { login } = useAuth();
     const [formData, setFormData] = useState({
         username: '',
@@ -73,6 +77,7 @@ const LoginForm = () => {
                 <button type='button' onClick={handleLogin}>Login</button>
                 <div>
                     <p>No account ? Consider <Link to="/register">register</Link> !</p>
+                    <p style={{fontStyle: 'italic'}}>PS: No need to do it, it's only for admin access thingies</p>
                 </div>
             </form>
         </div>

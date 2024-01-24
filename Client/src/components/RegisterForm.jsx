@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 
 const RegisterForm = () => {
+    useEffect(() => {
+        document.title = "Register";
+    }, []);
+
     const { login } = useAuth();
     const [formData, setFormData] = useState({
         username: '',
