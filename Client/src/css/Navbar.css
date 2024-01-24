@@ -38,3 +38,24 @@ button:hover {
 form a {
     text-decoration: none;
 }
+
+.language-switcher {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.language-dropdown p:hover {
+    border-bottom: 2px solid #fff;
+}
