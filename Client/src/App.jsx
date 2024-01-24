@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import AdminDashboard from './components/AdminDashboard';
+import Home from './components/Home';
 
 import './App.css';
 
@@ -14,6 +15,7 @@ const App = () => {
         <Router>
             <Header />
             <Routes>
+                <Route path="/" element={<Home />}></Route>
                 <Route path="/projects" element={<Projects />}></Route>
                 <Route path="/contact" element={<Contact />}></Route>
                 <Route path="/login" element={<LoginForm />}></Route>
