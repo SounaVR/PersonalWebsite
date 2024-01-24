@@ -1,0 +1,16 @@
+{
+    "projectsTab": "Projets",
+    "login": "Se connecter",
+    "register": "S'enregistrer",
+    "password": "Mot de passe",
+    "logout": "Se déconnecter",
+    "registerBottomText": "Vous avez déjà un compte ? Pensez à vous",
+    "loginBottomText": "Pas de compte ? Pensez à vous",
+    "loginBottomTextPS": "PS: Pas besoin de le faire, c'est juste pour des accès admin.",
+    "contactForm": "Formulaire de contact",
+    "fullName": "Nom complet",
+    "yourMail": "Votre mail",
+    "submit": "Envoyer",
+    "proTip": "Conseil de pro: vous pouvez cliquer sur les cartes pour afficher plus d'informations.",
+    "sideNote": "Note complémentaire : le site web sera amélioré, vous pouvez suivre le développement sur"
+}

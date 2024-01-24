@@ -1,0 +1,16 @@
+{
+    "projectsTab": "Projects",
+    "login": "Login",
+    "register": "Register",
+    "password": "Password",
+    "logout": "Logout",
+    "registerBottomText": "Already got an account ? Consider",
+    "loginBottomText": "No account ? Consider",
+    "loginBottomTextPS": "PS: No need to do it, it's only for admin access thingies.",
+    "contactForm": "Contact Form",
+    "fullName": "Full Name",
+    "yourMail": "Your Mail",
+    "submit": "Submit",
+    "proTip": "Pro tip: you can click on cards to display more information.",
+    "sideNote": "Side note: the website will be improved, you can follow the development on the"
+}
