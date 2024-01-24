@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 import '../css/Contact.css';
 
 const Contact = () => {
+    const { t } = useTranslation();
+
     useEffect(() => {
         document.title = "Contact";
     }, []);
@@ -51,9 +54,9 @@ const Contact = () => {
     
     return (
         <div>
-            <h2>Contact Form</h2>
+            <h2>{t('contactForm')}</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='name'>Full Name</label>
+                <label htmlFor='name'>{t('fullName')}</label>
                 <input
                     type='text'
                     id='name'
@@ -63,7 +66,7 @@ const Contact = () => {
                     required
                 />
 
-                <label htmlFor='email'>Your Mail</label>
+                <label htmlFor='email'>{t('yourMail')}</label>
                 <input
                     type='email'
                     id='email'
@@ -82,7 +85,7 @@ const Contact = () => {
                     required
                 />
 
-                <button type='submit'>Submit</button>
+                <button type='submit'>{t('submit')}</button>
             </form>
         </div>
     );

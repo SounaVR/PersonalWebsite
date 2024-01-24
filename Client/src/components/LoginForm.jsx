@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
+    const { t } = useTranslation();
     useEffect(() => {
         document.title = "Login";
     }, []);
@@ -51,7 +53,7 @@ const LoginForm = () => {
 
     return (
         <div>
-            <h2>Login</h2>
+            <h2>{t('login')}</h2>
             {error && <p className='error'>{error}</p>}
             <form>
                 <label htmlFor='username'>Username</label>
@@ -64,7 +66,7 @@ const LoginForm = () => {
                     required
                 />
 
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='password'>{t('password')}</label>
                 <input
                     type='password'
                     id='password'
@@ -74,10 +76,10 @@ const LoginForm = () => {
                     required
                 />
 
-                <button type='button' onClick={handleLogin}>Login</button>
+                <button type='button' onClick={handleLogin}>{t('login')}</button>
                 <div>
-                    <p>No account ? Consider <Link to="/register">register</Link> !</p>
-                    <p style={{fontStyle: 'italic'}}>PS: No need to do it, it's only for admin access thingies</p>
+                    <p>{t('loginBottomText')} <Link to="/register">register</Link> !</p>
+                    <p style={{fontStyle: 'italic'}}>{t('loginBottomTextPS')}</p>
                 </div>
             </form>
         </div>

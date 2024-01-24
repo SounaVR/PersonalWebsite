@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 const RegisterForm = () => {
+    const { t } = useTranslation();
     useEffect(() => {
         document.title = "Register";
     }, []);
@@ -47,7 +49,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <h2>Register</h2>
+            <h2>{t('register')}</h2>
             <form>
                 <label htmlFor='username'>Username</label>
                 <input
@@ -59,7 +61,7 @@ const RegisterForm = () => {
                     required
                 />
 
-                <label htmlFor='password'>Password</label>
+                <label htmlFor='password'>{t('password')}</label>
                 <input
                     type='password'
                     id='password'
@@ -69,9 +71,9 @@ const RegisterForm = () => {
                     required
                 />
 
-                <button type='button' onClick={handleRegister}>Register</button>
+                <button type='button' onClick={handleRegister}>{t('register')}</button>
                 <div>
-                    <p>Already got an account ? Consider <Link to="/login">login</Link> !</p>
+                    <p>{t('registerBottomText')} <Link to="/login">login</Link> !</p>
                 </div>
             </form>
         </div>
