@@ -1,7 +1,7 @@
 import React from 'react';
 import projectsData from '../assets/projectsData';
 
-const PopupOverlay = ({ onClose, projectId }) => {
+const PopupOverlay = ({ i18n, onClose, projectId }) => {
     const projectDetails = projectsData.find((project) => project.id === projectId);
 
     const handleOverlayClick = (event) => {
@@ -14,10 +14,10 @@ const PopupOverlay = ({ onClose, projectId }) => {
         <div className="popup-overlay" onClick={handleOverlayClick}>
             <div className="popup">
                 <div className="popup-content">
-                    <h2>{projectDetails.title}</h2>
+                    <h2>{projectDetails.title[i18n.language]}</h2>
                     <a href={projectDetails.githubURL} target='_blank' rel='noopener noreferrer' className='github-repo'>GitHub</a>
                     {Object.keys(projectDetails.moreDetails).map((key) => (
-                        <p>{projectDetails.moreDetails[key]}</p>
+                        <p>{projectDetails.moreDetails[key][i18n.language]}</p>
                     ))}
                     <div className="popup-tech-stack">
                         {projectDetails.techStack.map((tech, index) => (
