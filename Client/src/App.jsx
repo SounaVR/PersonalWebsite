@@ -6,7 +6,7 @@ import Contact from './components/Contact';
 import LoginForm from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import AdminDashboard from './components/AdminDashboard';
-import Home from './components/Home';
+const Home = React.lazy(() => import('./components/Home'));
 
 import './App.css';
 
