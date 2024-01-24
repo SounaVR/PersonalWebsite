@@ -1,65 +1,137 @@
 const projectsData = [
     {
         id: 1,
-        title: 'This website',
-        description: 'Mainly for my portfolio but contains much more.',
+        title: {
+            en: 'This website',
+            fr: 'Ce site'
+        },
+        description: {
+            en: 'Mainly for my portfolio but contains much more.',
+            fr: 'Principalement pour mon portfolio, mais il contient bien d\'autres choses.'
+        },
         techStack: ['react', 'css3', 'nodejs', 'express', 'mongodb'],
         imageUrl: '/WebsiteSample.png',
         moreDetails: {
-            para1: 'I wanted to create a portfolio for a while, since I\'m looking for a job application, it\'s a good time to start!',
-            para2: 'I also, I added a contact form and an Admin panel to link my projects and stuff in the future in one place to manage everything (like sshing or RDP to use my windows machine from a linux browser).'
+            para1: {
+                en: "I wanted to create a portfolio for a while, since I'm looking for a job application, it's a good time to start!",
+                fr: "Cela fait un moment que je voulais créer un portfolio, depuis que je cherche à postuler à un emploi, c'est le bon moment pour commencer !"
+            },
+            para2: {
+                en: 'I also, I added a contact form and an Admin panel to link my projects and stuff in the future in one place to manage everything (like sshing or RDP to use my windows machine from a linux browser).',
+                fr: "J'ai également ajouté un formulaire de contact et un panneau d'administration pour lier mes projets et autres choses à l'avenir en un seul endroit pour tout gérer (comme ssh ou RDP pour utiliser ma machine Windows à partir d'un navigateur linux)."
+            }
         },
         githubURL: 'https://github.com/SounaVR/PersonalWebsite'
     },
     {
         id: 2,
-        title: 'Mozu',
-        description: 'Discord RPG Bot (game).',
+        title: {
+            en: 'Mozu',
+            fr: 'Mozu'
+        },
+        description: {
+            en: 'Discord RPG Bot (game).',
+            fr: 'Discord RPG Bot (Jeu).'
+        },
         techStack: ['javascript', 'mysql', 'discordjs'],
         imageUrl: '/mozu.gif',
         moreDetails: {
-            para1: 'My biggest and longest project ever, I basically learned the most from this project, from basics to advanced API stuff.',
-            para2: 'The goal was to get an idle farming bot to waste time. Before the end of the project, I was working on a dungeon with stages to fight various creatures along with your lovely pets. To look more modern and cool, I planned to work with Canvas to generate images.',
-            para3: 'Apart from that you can: craft a gear, enchant it, put gems on it, upgrade your tools and more. Seems simple but the whole infrastructure is much crazier than you think, even for me today.'
+            para1: {
+                en: 'My biggest and longest project ever, I basically learned the most from this project, from basics to advanced API stuff.',
+                fr: "Mon projet le plus important et le plus long, c'est celui qui m'a le plus appris, des bases aux API les plus avancées."
+            },
+            para2: {
+                en: 'The goal was to get an idle farming bot to waste time. Before the end of the project, I was working on a dungeon with stages to fight various creatures along with your lovely pets. To look more modern and cool, I planned to work with Canvas to generate images.',
+                fr: "Le but était d'avoir un bot de farm oisif pour perdre du temps. Avant la fin du projet, je travaillais sur un donjon avec des étages pour combattre diverses créatures avec vos adorables animaux de compagnie. Pour avoir un aspect plus moderne et plus cool, j'avais prévue de travailler avec Canvas pour générer des images."
+            },
+            para3: {
+                en: 'Apart from that you can: craft a gear, enchant it, put gems on it, upgrade your tools and more. Seems simple but the whole infrastructure is much crazier than you think, even for me today.',
+                fr: "En outre, vous pouvez : fabriquer un équipement, l'enchanter, y ajouter des gemmes, améliorer vos outils et bien plus encore. Cela semble simple, mais toute l'infrastructure est bien plus folle que vous ne le pensez, même pour moi aujourd'hui."
+            }
         },
         githubURL: 'https://github.com/SounaVR/Mozu'
     },
     {
         id: 3,
-        title: 'RatMessenger [WIP]',
-        description: 'Discord clone but with rats.',
+        title: {
+            en: 'RatMessenger [WIP]',
+            fr: 'RatMessenger [WIP]'
+        },
+        description: {
+            en: 'Discord clone but with rats.',
+            fr: 'Clone de Discord mais avec des rats'
+        },
         techStack: ['react', 'css3', 'bootstrap', 'nodejs', 'express', 'mongodb'],
         imageUrl: '/rat.png',
         moreDetails: {
-            para1: 'Context: Discord crashes a lot and it\'s complicated to use when it has API problems, so I thought I\'d make my own Discord with the features it offers (chat in text channels, talk in voice channels, share screens, etc).',
-            para2: 'I tried to do it with chatGPT, but it\'s missing a few neurons, so I decided to do it myself.',
-            para3: 'Basic Register/Login with JWT. API to create servers and channels (voice or text). Channels are server based (like Discord lol).',
-            para4: 'Last time I worked on messages, works from API but now I need to implement them in the app.'
+            para1: {
+                en: 'Context: Discord crashes a lot and it\'s complicated to use when it has API problems, so I thought I\'d make my own Discord with the features it offers (chat in text channels, talk in voice channels, share screens, etc).',
+                fr: "Contexte : Discord plante souvent et il est compliqué à utiliser quand il a des problèmes d'API, alors j'ai pensé créer mon propre Discord avec les fonctionnalités qu'il offre (discuter dans des canaux de texte, parler dans des canaux de voix, partager des écrans, etc)."
+            },
+            para2: {
+                en: 'I tried to do it with chatGPT, but it\'s missing a few neurons, so I decided to do it myself.',
+                fr: "J'ai essayé de le faire avec chatGPT, mais il manque quelques neurones, alors j'ai décidé de le faire moi-même."
+            },
+            para3: {
+                en: 'Basic Register/Login with JWT. API to create servers and channels (voice or text). Channels are server based (like Discord lol).',
+                fr: "Inscription/connexion basique avec JWT. API pour créer des serveurs et des canaux (voix ou texte). Les canaux sont par serveurs (comme Discord)."
+            },
+            para4: {
+                en: 'Last time I worked on messages, works from API but now I need to implement them in the app.',
+                fr: "La dernière fois, j'ai travaillé sur les messages, fonctionne via l'API, mais maintenant je dois les mettre en œuvre dans l'application."
+            }
         },
         githubURL: 'https://github.com/SounaVR/RatMessenger'
     },
     {
         id: 4,
-        title: 'Discord bots',
-        description: 'Collection of small projects.',
+        title: {
+            en: 'Discord Bots',
+            fr: 'Bots Discord'
+        },
+        description: {
+            en: 'Collection of small projects.',
+            fr: 'Collection de petits projets.'
+        },
         techStack: ['javascript', 'mongodb', 'discordjs'],
         imageUrl: '/discordbots.png',
         moreDetails: {
-            para1: 'A while back, I built a bot to play with Notion\'s API.',
-            para2: 'Another one for Trello\'s API.',
-            para3: 'One for my personal server for moderation stuff or logs.',
-            para4: 'And now I\'m working on a selfbot (runs under the user account) for music stuff on my Linux machine. Includes a queue system, skip and play/pause. In the future I want to manage the machine from there.'
+            para1: {
+                en: 'A while back, I built a bot to play with Notion\'s API.',
+                fr: "Il y a quelque temps, j'ai construit un bot pour jouer avec l'API de Notion."
+            },
+            para2: {
+                en: 'Another one for Trello\'s API.',
+                fr: "Un autre pour l'API de Trello."
+            },
+            para3: {
+                en: 'One for my personal server for moderation stuff or logs.',
+                fr: "Un pour mon serveur personnel pour la modération ou les logs."
+            },
+            para4: {
+                en: 'And now I\'m working on a selfbot (runs under the user account) for music stuff on my Linux machine. Includes a queue system, skip and play/pause. In the future I want to manage the machine from there.',
+                fr: "Et maintenant, je travaille sur un selfbot (qui tourne sous le compte utilisateur) pour la musique sur ma machine Linux. Il comprend un système de file d'attente, de skip et de lecture/pause. Dans le futur, je voudrais gérer la machine à partir de là."
+            }
         },
         githubURL: 'https://github.com/SounaVR'
     },
     {
         id: 5,
-        title: 'MUSIC-CLI',
-        description: 'Not really a project but it\'s fun.',
+        title: {
+            en: 'MUSIC-CLI',
+            fr: 'MUSIC-CLI'
+        },
+        description: {
+            en: 'Not really a project but it\'s fun.',
+            fr: "Pas vraiment un projet mais c'est marrant."
+        },
         techStack: ['bash'],
         imageUrl: '/mpd.png',
         moreDetails: {
-            para1: 'I made scripts to listen to music or watch a YouTube video. The future goal is to invoke the script that records the microphone for the name of the music with a voice command (like Alexa).'
+            para1: {
+                en: 'I made scripts to listen to music or watch a YouTube video. The future goal is to invoke the script that records the microphone for the name of the music with a voice command (like Alexa).',
+                fr: "J'ai créé des scripts pour écouter de la musique ou regarder une vidéo YouTube. L'objectif futur est d'invoquer le script qui enregistre le microphone pour le nom de la musique avec une commande vocale (comme Alexa)."
+            }
         },
         githubURL: 'https://github.com/SounaVR/music-cli'
     }
