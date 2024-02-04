@@ -1,5 +1,5 @@
 // Imports
-require('dotenv').config();
+require('dotenv').config({ path: "../.env" });
 const http = require('http');
 const express = require('express');
 const path = require('path');
