@@ -6,8 +6,8 @@ const projectsData = [
             fr: 'Ce site'
         },
         description: {
-            en: 'Mainly for my portfolio but contains much more.',
-            fr: 'Principalement pour mon portfolio, mais il contient bien d\'autres choses.'
+            en: 'Mainly for my portfolio but has more.',
+            fr: 'Principalement pour mon portfolio, mais contient bien plus.'
         },
         techStack: ['react', 'css3', 'nodejs', 'express', 'mongodb'],
         imageUrl: '/WebsiteSample.png',
