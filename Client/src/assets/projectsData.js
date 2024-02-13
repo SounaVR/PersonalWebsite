@@ -61,7 +61,7 @@ const projectsData = [
             en: 'Discord clone but with rats.',
             fr: 'Clone de Discord mais avec des rats'
         },
-        techStack: ['react', 'css3', 'bootstrap', 'nodejs', 'express', 'mongodb'],
+        techStack: ['react', 'css3', 'bootstrap', 'nodejs', 'express', 'socketio', 'mongodb' ],
         imageUrl: '/rat.png',
         moreDetails: {
             para1: {
