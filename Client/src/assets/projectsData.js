@@ -73,12 +73,16 @@ const projectsData = [
                 fr: "J'ai essayé de le faire avec chatGPT, mais il manque quelques neurones, alors j'ai décidé de le faire moi-même."
             },
             para3: {
-                en: 'Basic Register/Login with JWT. API to create servers and channels (voice or text). Channels are server based (like Discord lol).',
-                fr: "Inscription/connexion basique avec JWT. API pour créer des serveurs et des canaux (voix ou texte). Les canaux sont par serveurs (comme Discord)."
+                en: 'Basic Register/Login with JWT. API to create servers and channels (voice or text) stored in a database (I use MongoDB). Channels are server based (like Discord lol).',
+                fr: "Inscription/connexion basique avec JWT. API pour créer des serveurs et des canaux (voix ou texte) stockés dans une base de données (j'utilise MongoDB). Les canaux sont par serveurs (comme Discord)."
             },
             para4: {
-                en: 'Last time I worked on messages, works from API but now I need to implement them in the app.',
-                fr: "La dernière fois, j'ai travaillé sur les messages, fonctionne via l'API, mais maintenant je dois les mettre en œuvre dans l'application."
+                en: 'The real-time message system is operational, so each message is stored per channel (and therefore per server). Socket.io was used for this.',
+                fr: "Le système de messages en temps réel est opérationnel, donc chaque message est stocké par salon (et du coup par serveur). Socket.io a été utilisé pour cela."
+            },
+            para5: {
+                en: 'Last time, I worked on the list of users present in a server, did some dynamic routing on the front side and prepared the ground for the friend system (so adding someone, notifying the person + pending request on the target, being able to block the person and having the list of these people). Ideally, I\'d also like to implement private conversations at the same time.',
+                fr: "La dernière fois, j'ai travaillé sur la liste des utilisateurs présents dans un serveur, j'ai fais un routing dynamique côté front et j'ai préparer le terrain pour le système d'amis (donc ajouter quelqu'un, notification à la personne + requête en attente sur la cible, pouvoir bloquer la personne et avoir la liste de ces personnes là). L'idéal serait que j'implémenter aussi les conversations privées en même temps."
             }
         },
         githubURL: 'https://github.com/SounaVR/RatMessenger'
