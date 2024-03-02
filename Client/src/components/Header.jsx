@@ -24,7 +24,7 @@ const Header = () => {
             </div>
             <div className='form'>
                 <div className="language-switcher" onClick={() => setShowDropdown(!showDropdown)}>
-                    🌍 Lang
+                    🌍 {t('language')}
                     {showDropdown && (
                         <div className="language-dropdown">
                             <p onClick={() => changeLanguage('en')}>English</p>
