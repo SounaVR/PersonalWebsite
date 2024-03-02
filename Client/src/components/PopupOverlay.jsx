@@ -13,17 +13,19 @@ const PopupOverlay = ({ i18n, onClose, projectId }) => {
     return (
         <div className="popup-overlay" onClick={handleOverlayClick}>
             <div className="popup">
-                <div className="popup-content">
+                <div className="popup-header">
                     <h2>{projectDetails.title[i18n.language]}</h2>
                     <a href={projectDetails.githubURL} target='_blank' rel='noopener noreferrer' className='github-repo'>GitHub</a>
+                </div>
+                <div className="popup-body">
                     {Object.keys(projectDetails.moreDetails).map((key) => (
                         <p>{projectDetails.moreDetails[key][i18n.language]}</p>
                     ))}
-                    <div className="popup-tech-stack">
-                        {projectDetails.techStack.map((tech, index) => (
-                            <img key={index} src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.toLowerCase()}/${tech.toLowerCase()}-original.svg`} alt={tech} />
-                        ))}
-                    </div>
+                </div>
+                <div className="popup-tech-stack">
+                    {projectDetails.techStack.map((tech, index) => (
+                        <img key={index} src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.toLowerCase()}/${tech.toLowerCase()}-original.svg`} alt={tech} />
+                    ))}
                 </div>
             </div>
         </div>
