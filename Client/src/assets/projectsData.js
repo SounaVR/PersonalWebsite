@@ -26,6 +26,30 @@ const projectsData = [
     {
         id: 2,
         title: {
+            en: 'Lock2FA [WIP]',
+            fr: 'Lock2FA [WIP]'
+        },
+        description: {
+            en: '2FA Cross-Platform Application to replace Authy',
+            fr: 'Application A2F Cross-Platform pour remplacer Authy'
+        },
+        techStack: ['react', 'css3', 'bootstrap', 'nodejs', 'express', 'mongodb'],
+        imageUrl: '/lock2fa.jpg',
+        moreDetails: {
+            para1: {
+                en: 'One-time password application (Two-factor authentication (A2F)) to replace Authy, which will discontinue the PC application on March 19.',
+                fr: 'Application de mot de passe à usage unique (Authentification à double facteur (A2F)) pour remplacer Authy qui abandonnera l\'application PC le 19 Mars.'
+            },
+            para2: {
+                en: 'I use it every day, so I had to create my own, since there\'s no cross-platform alternative.',
+                fr: 'Je l\'utilise quotidiennement donc je me devais de créer la mienne vu qu\'il n\'existe aucune alternative cross-plateforme.'
+            }
+        }
+        //TODO add github url
+    },
+    {
+        id: 3,
+        title: {
             en: 'Mozu',
             fr: 'Mozu'
         },
@@ -52,7 +76,31 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR/Mozu'
     },
     {
-        id: 3,
+        id: 4,
+        title: {
+            en: 'Personal Voice Assistant [WIP]',
+            fr: 'Assistant Vocal Personnel [WIP]'
+        },
+        description: {
+            en: '"Raw" Artificial Intelligence',
+            fr: 'Intelligence artificielle "brute"'
+        },
+        techStack: ['python'],
+        imageUrl: '/snake_mic.png',
+        moreDetails: {
+            para1: {
+                en: 'A Python project for my Linux machine to run things by voice (like Alexa or the Google Home).',
+                fr: 'Un projet en Python pour ma machine Linux afin d\'exécuter des choses par la voix (comme Alexa ou le Google Home).'
+            },
+            para2: {
+                en: 'The principle is to capture the microphone input to wait for the "wake-up" word, once the app is "awake", we recapture the microphone to retrieve the desired action, thanks to Speech to Text, we convert the audio into text to trigger the associated logic and at the end we obtain user feedback via the audio output thanks to Text to Speech.',
+                fr: 'Le principe est de capturer l\'entrée micro pour attendre le mot de "réveil", une fois que l\'app est "réveillée", on recapture le micro afin de récupérer l\'action voulue, grâce au Speech to Text, on convertit l\'audio en texte pour déclencher la logique associée et à la fin on obtient un retour utilisateur via la sortie audio grâce au Text to Speech.'
+            }
+        },
+        //TODO add github url
+    },
+    {
+        id: 5,
         title: {
             en: 'RatMessenger [WIP]',
             fr: 'RatMessenger [WIP]'
@@ -88,7 +136,7 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR/RatMessenger'
     },
     {
-        id: 4,
+        id: 6,
         title: {
             en: 'Discord Bots',
             fr: 'Bots Discord'
@@ -120,7 +168,7 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR'
     },
     {
-        id: 5,
+        id: 7,
         title: {
             en: 'MUSIC-CLI',
             fr: 'MUSIC-CLI'
