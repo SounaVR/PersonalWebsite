@@ -1,7 +1,9 @@
 import React from 'react';
 import projectsData from '../assets/projectsData';
+import { useTranslation } from 'react-i18next';
 
 const PopupOverlay = ({ i18n, onClose, projectId }) => {
+    const { t } = useTranslation();
     const projectDetails = projectsData.find((project) => project.id === projectId);
 
     const handleOverlayClick = (event) => {
@@ -15,7 +17,10 @@ const PopupOverlay = ({ i18n, onClose, projectId }) => {
             <div className="popup">
                 <div className="popup-header">
                     <h2>{projectDetails.title[i18n.language]}</h2>
-                    <a href={projectDetails.githubURL} target='_blank' rel='noopener noreferrer' className='github-repo'>GitHub</a>
+                    {projectDetails.githubURL &&
+                        <a href={projectDetails.githubURL} target='_blank' rel='noopener noreferrer' className='github-repo'>GitHub</a>
+                    }
+                    {!projectDetails.githubURL && <p>{t('closedSource')}</p>}
                 </div>
                 <div className="popup-body">
                     {Object.keys(projectDetails.moreDetails).map((key) => (
