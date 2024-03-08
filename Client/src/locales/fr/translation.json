@@ -13,5 +13,6 @@
     "submit": "Envoyer",
     "proTip": "Conseil de pro: vous pouvez cliquer sur les cartes pour afficher plus d'informations.",
     "sideNote": "Note complémentaire : le site web sera amélioré, vous pouvez suivre le développement sur",
-    "language": "Langue"
+    "language": "Langue",
+    "closedSource": "Pas encore open-source"
 }
