@@ -76,7 +76,7 @@ const LoginForm = () => {
                     required
                 />
 
-                <button type='button' onClick={handleLogin}>{t('login')}</button>
+                <button id="navbar-button" type='button' onClick={handleLogin}>{t('login')}</button>
                 <div>
                     <p>{t('loginBottomText')} <Link to="/register">register</Link> !</p>
                     <p style={{fontStyle: 'italic'}}>{t('loginBottomTextPS')}</p>

@@ -36,15 +36,15 @@ const Header = () => {
                     <>
                         {authData.role ? (
                             <Link to="/admin/dashboard">
-                                <button>Admin</button>
+                                <button id="navbar-button">Admin</button>
                             </Link>
                         ) : (<></>)}
-                        <a><button onClick={logout}>{t('logout')}</button></a>
+                        <a><button id="navbar-button" onClick={logout}>{t('logout')}</button></a>
                     </>
                 ) : (
                     <>
                         <Link to="/login">
-                            <button>{t('login')}</button>
+                            <button id="navbar-button">{t('login')}</button>
                         </Link>
                     </>
                 )}

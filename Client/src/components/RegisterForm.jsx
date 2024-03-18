@@ -71,7 +71,7 @@ const RegisterForm = () => {
                     required
                 />
 
-                <button type='button' onClick={handleRegister}>{t('register')}</button>
+                <button id="navbar-button" type='button' onClick={handleRegister}>{t('register')}</button>
                 <div>
                     <p>{t('registerBottomText')} <Link to="/login">login</Link> !</p>
                 </div>
