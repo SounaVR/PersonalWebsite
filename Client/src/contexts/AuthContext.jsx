@@ -12,6 +12,17 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         if (authData.token) {
+            const decodedToken = authData.token ? jwtDecode(authData.token) : null;
+            const currentTime = Date.now() / 1000;
+
+            if (decodedToken.exp < currentTime) {
+                logout();
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        if (authData.token) {
             localStorage.setItem('token', authData.token);
         } else {
             localStorage.removeItem('token');
