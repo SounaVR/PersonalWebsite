@@ -7,7 +7,7 @@
 - Nothing crazy, basic stuff with JWT
 - [x] Contact form 📧
 - Mail sending with nodemailer to my personal mail using a forward email
-- [ ] Admin Panel 👮‍♀️
+- [x] Admin Panel 👮‍♀️
 - The access is already restricted and features are in progress
 - [ ] Add a Linux tab to show my tools, some gifs and more nice cool looking stuff 😎
 - [ ] And more later... 🕓
