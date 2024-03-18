@@ -40,7 +40,7 @@ const Home = () => {
 
     return (
         <>
-        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{readmeContent}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{readmeContent}</ReactMarkdown>
         </>
     );
 };
