@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
+import Hidden from './Admin/hidden';
+
+import '../css/Admin.css';
 
 const AdminDashboard = () => {
     const { authData } = useAuth();
@@ -7,7 +10,7 @@ const AdminDashboard = () => {
 
     useEffect(() => {
         document.title = "Administration Panel";
-        
+
         const verifyToken = async () => {
             try {
                 const response = await fetch('https://souna.lexod.fr/api/verify-token', {
@@ -36,11 +39,13 @@ const AdminDashboard = () => {
 
     if (isAdmin) {
         return (
-            <h2>Admin Panel</h2>
+            <>
+                <Hidden />
+            </>
         );
     } else {
         return <div>Access denied. You need admin privileges to view this page.</div>;
-    }    
+    }
 };
 
 export default AdminDashboard;

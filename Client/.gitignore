@@ -23,3 +23,6 @@ public
 *.njsproj
 *.sln
 *.sw?
+
+src/components/Admin
+src/css/Admin.css
