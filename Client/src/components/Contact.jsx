@@ -85,7 +85,7 @@ const Contact = () => {
                     required
                 />
 
-                <button type='submit'>{t('submit')}</button>
+                <button id="navbar-button" type='submit'>{t('submit')}</button>
             </form>
         </div>
     );
