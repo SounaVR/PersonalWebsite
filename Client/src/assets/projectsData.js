@@ -26,6 +26,36 @@ const projectsData = [
     {
         id: 2,
         title: {
+            en: 'YAFM',
+            fr: 'YAFM'
+        },
+        description: {
+            en: 'Yet Another File Manager',
+            fr: 'Yet Another File Manager'
+        },
+        techStack: ['electron', 'html5','css3', 'nodejs'],
+        imageUrl: '/YAFM.png',
+        moreDetails: {
+            para1: {
+                en: "I know that similar applications exist, but I like to embellish my portfolio ✨",
+                fr: "Je sais que des applications similaires existent mais j'aime embellir mon portfolio ✨"
+            },
+            para2: {
+                en: 'This app lets you list your files by extensions via categories that you can reorganize/modify/delete and add to!',
+                fr: "Cette application vous permet de lister vos fichiers par extensions via des catégories que vous pouvez réorganiser/modifier/supprimer et ajouter!"
+            },
+            para3: {
+                en: `They're also organized by color, so you can find your files at a glance!
+                        You can also interact with your files: left-click to open the file, right-click to open the file location 😮`,
+                fr: `Elles sont aussi organisées par couleur qui va vous permettre de trouver vos fichiers d'un seul coup d'oeil !
+                        Vous pouvez aussi interagir avec vos fichiers avec un clique gauche vous permettra d'ouvrir le fichier tandis qu'un clique droit vous permet d'ouvrir l'emplacement du fichier 😮`
+            }
+        },
+        githubURL: 'https://github.com/SounaVR/YAFM'
+    },
+    {
+        id: 3,
+        title: {
             en: 'Lock2FA [WIP]',
             fr: 'Lock2FA [WIP]'
         },
@@ -48,7 +78,7 @@ const projectsData = [
         //TODO add github url
     },
     {
-        id: 3,
+        id: 4,
         title: {
             en: 'Mozu',
             fr: 'Mozu'
@@ -76,7 +106,7 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR/Mozu'
     },
     {
-        id: 4,
+        id: 5,
         title: {
             en: 'Personal Voice Assistant [WIP]',
             fr: 'Assistant Vocal Personnel [WIP]'
@@ -100,7 +130,7 @@ const projectsData = [
         //TODO add github url
     },
     {
-        id: 5,
+        id: 6,
         title: {
             en: 'RatMessenger [WIP]',
             fr: 'RatMessenger [WIP]'
@@ -136,7 +166,7 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR/RatMessenger'
     },
     {
-        id: 6,
+        id: 7,
         title: {
             en: 'Discord Bots',
             fr: 'Bots Discord'
@@ -168,7 +198,7 @@ const projectsData = [
         githubURL: 'https://github.com/SounaVR'
     },
     {
-        id: 7,
+        id: 8,
         title: {
             en: 'MUSIC-CLI',
             fr: 'MUSIC-CLI'
